@@ -73,7 +73,7 @@ public function read($fields=null,$pRech=null){
 		}
 		
 		try {
-		  // On envois la requète
+		  // On envois la requête
 			$select = $this->connection->query($sql);
 			
 		  // On indique que nous utiliserons les résultats en tant qu'objet
@@ -84,11 +84,6 @@ public function read($fields=null,$pRech=null){
 		} catch ( PDOException $e ) {
 			echo 'Erreur lors de l\' exécution de la requête : '.$sql.'==========='.$e->getMessage(); ;
 		}
-		
 	}
-	
-	
-
-
 }
 ?>
