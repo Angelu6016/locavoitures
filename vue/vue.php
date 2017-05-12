@@ -18,7 +18,7 @@ class Vue{
 
 				if($subkey==$pID){
 					$Button='<form action=" '.$pDestination.' " method="post">'.'<input type="submit" value="Voir">'.
-					'<input type="text" name="RECH_FICH" value=" '.$subelement.' " >'.'</form>';
+					'<input type="hidden" name="RECH_FICH" value=" '.$subelement.' " >'.'</form>';
 
 				}
 				
@@ -29,6 +29,7 @@ class Vue{
 			$titre_trt= true;
 			$out .= "</tr>";
 		}
+		
 		$out = '<section ID="RESULT_'.$pNom.' "><article><table>'.$titre.$out.'</table></article></section>';
 		
 		return $out;
@@ -36,15 +37,18 @@ class Vue{
 //-----------------------------------------------------------------------------------------------------	
 	public static function rtv_Fiche($pParam,$pID,$pDestination){
 		$out  = "";
-		foreach($pParam->data as $key => $element){
-				if($element==$pID){
-					foreach($element as $subkey => $subelement){
+		//echo $pID;
+		//echo ("-------------------------------------------------");
+		foreach($pParam -> data as $key => $element){
+
+			foreach($element as $subkey => $subelement){
+			//	if($subelement==$pID){
 						$out .= "<tr>";
 						$out .= '<th>'.$subkey.'</th>' ;
 						$out .= '<td>'.$subelement.'</td>' ;
 						$out .= "</tr>";
-					}
-				}
+			//	}
+			}
 		}
 		$out = '<table>'.$out.'</table>';
 		return $out;

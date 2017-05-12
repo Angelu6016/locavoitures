@@ -1,63 +1,27 @@
 
 	<section>
-		<h2 class="testclass_h2">Nos formations</h2>
+		<h2 class="testclass_h2">Nos réservations</h2>
 		<article>
-			<h3>Agent valoriste</h3>
-			<p>
-				La formation d'agent valoriste s'adresse à des personnes sans qualification.
-
-				Pour favoriser la démarche d’insertion socio-professionnelle, cette formation poursuit le but de développer l’acquisition de savoir-faire pouvant déboucher sur une poursuite d’une formation qualifiante.
-
-				En particulier, cette formation s’oriente vers la restauration de mobilier et les apprentissages des gestes de base dans ce domaine d’activité.
-			</p> 
-		</article>
-
-		<article>
-			<h3>Bachelier en informatique de gestion</h3>
-			<p>
-				Le bachelier en Informatique de gestion est un collaborateur polyvalent qui met en oeuvre la diversité méthodologique des différentes fonctions de l’informaticien en réponse aux besoins des organisations.
-
-				Il participe à l’analyse et à l’étude technique de projets d’informatisation:
-
-
-
-			</p>
-							<ul>
-					<li>
-						Il participe à la conception, développe, teste et implémente des solutions intégrant des standards techniques et méthodologiques ainsi que des progiciels existants.
-					</li>
-					<li>
-						Il participe à la conception, à la gestion et à la sécurisation de systèmes d’information dont des bases de données.
-					</li>
-					<li>
-						Il participe à la conception d’interfaces homme/machine et à la mise en oeuvre de projets e-business.
-					</li>
-					<li>
-						Il contribue à assurer la continuité du fonctionnement des infrastructures et participe à leur évolution logicielle et matérielle.
-					</li>
-					<li>
-						Il analyse l’impact des nouvelles technologies sur l’évolution des organisations et en assure l’intégration.
-					</li>
-					<li>
-						Il intègre des connaissances économiques liées à l’exercice de ses fonctions.
-					</li>
-					<li>
-						Il peut travailler en équipe ou en réseaux et assurer le support des utilisateurs en termes de documentation, de formation et d’assistance en utilisant les outils de communication appropriés.
-					</li>
-				</ul>
-
+			<h3>Envie de voyager</h3>
+			<p><img src="../vue/Images/banner01.PNG" width="1107" height="428"></p> 
 		</article>		
 	</section>
 	<section>
-		<h2>La vie à l'école</h2>
+		<h2>La vie à l'agence</h2>
 		<article>
-			<h3>Décès Abbé Vanderus</h3>
+			<h3>Charleroi</h3>
 			
-					<img src="../vue/images/vanderus.jpg" alt="">
+					<img src="../vue/Images/location-voiture.jpg" width="300" height="250">
 			<p> 
-				Notre Président de PO a tiré sa révérence en ce début de mois de juillet. <br>
+				
 
-				Natif de Charleroi, l'Abbé Jacques Vanderus était un Aumônier du travail passionné par l'enseignement et la gestion des écoles. Après avoir enseigné quelques années, il devint directeur du Collège Technique des ATC. Il cumula ainsi la gestion d'écoles organisant des enseignements de plein exercice et de promotion sociale, de niveaux secondaires et supérieurs. 
+Louez votre voiture à Charleroi avec LocaVoitures et faites de vos voyages des expériences réussies. Profitez de prix attractifs, d’un service de grande qualité et d’un vaste choix de véhicules neufs. Vous trouverez une agence de location de voiture Europcar dans le centre ville, les aéroports et les gares de Charleroi. LocaVoitures met à votre disposition la voiture ou le véhicule utilitaire qui vous convient.
+
+Louez votre voiture avec Charleroi dès aujourd’hui ! Louer une voiture à Mons (maisieres) c'est simple avec LocaVoitures.be : Réservez en 3 étapes et bénéficiez d’offres tous les jours. Elu meilleur loueur de voitures lors des World Travel Awards; Europcar fait avancer la location de voiture à Charleroi.
+
+Que vous soyez à la recherche d’une voiture de location courte ou longue durée, d’un véhicule de remplacement ou d’un véhicule utilitaire, Europcar a ce qu’il vous faut et nos agents se feront un plaisir de vous accueillir dans nos stations à Charleroi. La Charte Verte LocaVoitures: LocaVoitures a rejoint la cause pour l’environnement.
+
+Parce qu’il nous tient à cur d’être responsables, nous nous sommes lancés dans un programme de développement durable et sommes fiers d’être le premier loueur de voitures à avoir fait certifier ses engagements pour l’environnement à Charleroi. Après tout, ce qui est bon pour la Terre l’est aussi pour nos conducteurs. 
 			</p>
 
 		</article>

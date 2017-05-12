@@ -38,6 +38,7 @@ class Model{
 	}
 //-------------------------------------------------------------------------------------------------------------	
 public function read($fields=null,$pRech=null){
+		$where="";
 		
 		if($fields==null){
 			$fields = '*';
@@ -52,26 +53,26 @@ public function read($fields=null,$pRech=null){
 			}	
 		}
 		else{
-			$where="";
-			$i=0;
-			while($i<count($this->Rech)){
-				if ($i==0) {
-					$where="upper(concat(";
-				}else{
-					$where.=" , '|' , ";
+			if ($where==""){
+				$sql= 'SELECT * from '.$this->table.' WHERE '.$this->PK[0].' = "'.trim($pRech).'"';
+			}
+			else{
+				$i=0;
+				while($i<count($this->Rech)){
+					if ($i==0) { $where="upper(concat("; }
+					else { $where.=" , '|' , "; }
+					$where.=$this->Rech[$i];			
+					$i++;
 				}
-				$where.=$this->Rech[$i];			
-				$i++;
+				if ($where!=""){
+					$where.=" )) like upper(".$this->connection->quote("%".$pRech."%").") ";
+					$sql= 'SELECT '.$fields.' from '.$this->table.' where '.$where ;	
+				}else{
+					$sql= 'SELECT '.$fields.' from '.$this->table ;
+				}
 			}
-			if ($where!=""){
-				$where.=" )) like upper(".$this->connection->quote("%".$pRech."%").") ";
-				$sql= 'SELECT '.$fields.' from '.$this->table.' where '.$where ;	
-			}else{
-				$sql= 'SELECT '.$fields.' from '.$this->table ;
-			}
-			
 		}
-		
+		//echo ("<p>SQL: ".$sql."</p>");
 		try {
 		  // On envois la requête
 			$select = $this->connection->query($sql);
@@ -80,6 +81,7 @@ public function read($fields=null,$pRech=null){
 			$select->setFetchMode(PDO::FETCH_OBJ);
 			$this->data = new stdClass();
 			$this->data = $select->fetchAll();
+			
 
 		} catch ( PDOException $e ) {
 			echo 'Erreur lors de l\' exécution de la requête : '.$sql.'==========='.$e->getMessage(); ;
