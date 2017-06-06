@@ -4,8 +4,6 @@
 	if(!(isset($rech))){
 		$rech='';
 	}
-
-
 	if(isset($_POST['RECH_AJAX'])){
 		$rech = $_POST['RECH_AJAX'];
 	}

@@ -6,6 +6,8 @@
 	<title>Location de voitures</title>
 	<link rel="stylesheet" href="../vue/css/page.css">
 
+    
+    
 </head>
 <body>
 	<header id="header" class="header">

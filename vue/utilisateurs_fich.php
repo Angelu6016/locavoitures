@@ -1,13 +1,9 @@
-<section>
-	<article>
+<section class="popupStyle">
+
 	<h3>Fiche individuelle</h3>
 	<?php 
-		echo Vue::rtv_Fiche($utilisateurs,$rech,"../CONTROL/utilisateurs_fich.php");
+		echo Vue::rtv_Fiche($utilisateurs,$rech);
 	?>
-    <br>
-    <form action="../CONTROL/utilisateurs_tab.php" method="post" accept-charset="utf-8">
-	<input type="submit" name="" value="Retour">
-	</form>
-	</article>
+
 </section>
 	

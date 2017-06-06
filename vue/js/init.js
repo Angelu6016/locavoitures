@@ -1,6 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<script src="../vue/js/ajaxrech.js"></script>
+<script src="../vue/js/form_rech_ajax.js"></script>
 
 
 <script>
