@@ -1,9 +1,7 @@
 <section>
-	<article>
-
+	<h2>Table des utilisateurs</h2>
 	<?php 
-		echo Vue::rtv_Table($utilisateurs,"RECH_FICH",'#',"../CONTROL/utilisateurs_fich.php");	 //affiche la table des utilisateurs
+		echo Vue::rtv_Table($utilisateurs,"RECH_FICH",'Login',"../CONTROL/utilisateurs_fich.php");	 //affiche la table des utilisateurs
 	?>
-	</article>
 </section>
 	

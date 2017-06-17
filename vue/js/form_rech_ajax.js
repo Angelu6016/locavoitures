@@ -30,7 +30,4 @@ var visuPopup = function(event){
   		});
 };
 //------------------------------------------------------------------------------------------
-$( '.POPUPFORM' ).each(function(index) {
-    $(this).on("click", visuPopup);
-
-});
+$( '.POPUPFORM' ).each(function(index) { $(this).on("click", visuPopup); });

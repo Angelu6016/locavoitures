@@ -10,7 +10,7 @@
 
 	$utilisateurs=Model::load("utilisateurs");
 
-	$utilisateurs->read('utilisateur "#", code "Code ", nom "Nom" , prenom "Prénom"', $rech );
+	$utilisateurs->read('utilisateur "Login", code "Code ", nom "Nom" , prenom "Prénom"', $rech );
 
 	require_once('../vue/utilisateurs_tab.php');
 ?>

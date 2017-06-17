@@ -72,9 +72,9 @@ public function read($fields=null,$pRech=null){
 				}
 			}
 		}
-		//echo ("<p>SQL: ".$sql."</p>");
 		try {
 		  // On envois la requête
+		  //echo $sql;
 			$select = $this->connection->query($sql);
 			
 		  // On indique que nous utiliserons les résultats en tant qu'objet

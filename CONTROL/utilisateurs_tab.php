@@ -9,7 +9,6 @@
 	}
 	echo vue::rtv_Zone_Rech("../control/utilisateurs_tab.php","ZONE_RECH_USER",$rech,"Rechercher un employé");
 	
-	//require_once('../vue/utilisateurs_tab_form.php');
 	require_once('../control/utilisateurs_tab_ajax.php');
 	require_once('../vue/bas.php');
 ?>
