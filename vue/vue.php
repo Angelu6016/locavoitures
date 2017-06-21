@@ -88,12 +88,18 @@ class Vue{
 
 //----------------------------------------------------------------------------------------------------
 	public static function rtv_Zone_Rech($pAction,$pNom,$pRechVal,$pPlaceHolder){
-	
+
 		$ValRetour = '<section id="recherche">';
 		$ValRetour .= '<form action= " '.$pAction.' " method="post" accept-charset="utf-8">';
 		$ValRetour .= '<input type="text" name="'.$pNom.'" value="'.$pRechVal.'" placeholder="'.$pPlaceHolder.'">';
 		$ValRetour .= '<input type="submit" name="" value="Rechercher">';
-		$ValRetour .= '</form>';
+		$ValRetour .= '</form></br>';
+		
+		if (strstr($pAction, "utilisateurs")) {$ValRetour .='La recherche se fait sur Login, nom et prénom.';}
+		if (strstr($pAction, "voitures")){$ValRetour .='La recherche se fait sur Marque, Modèle et Plaque.';}
+		if (strstr($pAction, "reservations") ){$ValRetour .='La recherche se fait sur Date de début, nom du client et modèle de la voiture.';}
+			
+		$ValRetour .= ' ';
 		$ValRetour .= '</section>';
 		return $ValRetour;
 	
