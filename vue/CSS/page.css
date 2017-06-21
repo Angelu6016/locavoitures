@@ -28,9 +28,10 @@ html{
 section{
 	margin-top: 10px;
 	margin-right: 260px;
-	border: 1px solid #d4d4d4;
+	border: 1px solid #FFCC00;
 	border-radius: 5px;
-	background-image: url(/Projet%20Web/locavoitures/vue/Images/fondvert3.jpeg);
+	background-image: url(/Projet%20Web/locavoitures/vue/Images/abstract_background_green.jpg);
+	background-repeat: no-repeat;
 }
 .aside{
 	right: 7px;
@@ -45,31 +46,40 @@ section{
 	background-image: url(/Projet%20Web/locavoitures/vue/Images/fondvert3.jpeg);	
  }
 #login_page {
-	background-color: #0CF;
+	background-color: rgba(85,127,0,1);
 	height: 300px;
 	width: 99%;
 	padding-top: 5px;
 	padding-left: 10px;
 }
-#article_login{
-	height: 75px;
+#article_login{	
+	height: 50px;
 	width: 200px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #FFF;
-	border-right-color: #FFF;
-	border-bottom-color: #FFF;
-	border-left-color: #FFF;
+	border-style: solid;
+	border-color:#FFF;
 	margin-top: 100px;
-	margin-left: 600px;
+	margin-left: auto;
+	margin-right:auto;
 	padding-top: 10px;
 	padding-left: 10px;
+}
+#erreur_login{
+	margin-top: 15px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 16px;
+	color: rgb(255,0,0);
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align:center;
 }
 #locvoit{
 	float:left;
 	margin-right:10px;
+}
+#imgbanner{
+	height: 428px;
+	width: 1107px;
+	margin-left: 100px;	
 }
  footer{
     border: 1px solid #d4d4d4; 
@@ -81,6 +91,9 @@ section{
     margin-top: 10px;
     border: 1px solid #d4d4d4;
 	border-radius: 5px;
+}
+form{
+	display:inline;
 }
 
 h1{
@@ -124,7 +137,6 @@ h2{
 	border:hidden;
 	height:400px;
 	width:800px;
-	padding-left:500px;
 }
 #recherche{
 	height:40px;
@@ -135,11 +147,7 @@ h2{
 	position: absolute;
 	left:100px;
 }
-#btnAnnule{
-	position: relative;
-	left:170px;
-	top:-20px;
-}
+
 /*-----------------------------------------------------------------------------------------------------*/
 .TBHOUV {
 	border: 1px solid #d4d4d4;
@@ -154,12 +162,9 @@ h2{
 .CellGrise{
 	background-color: rgb(125,125,125)	;
 	text-align: center;
-
 }
 .TBHOUV td {
-	
-	width: 50px;
-	
+	width: 50px;	
 }
 .rouge{
 	color: red;
@@ -170,7 +175,7 @@ h2{
 table {
  border-width:1px; 
  border-style:solid; 
- border-color:black;
+ border-color: rgb(255,255,255);
  }
 tbody{
 	 columns:50px;
@@ -179,7 +184,8 @@ td,th {
  border-width:1px;
  border-style:solid; 
  border-color:black;
-
+ text-align:center;
+ width:75px;
  }
 
 tr:nth-child(even) {background: #CCC;color:blue;}

@@ -6,8 +6,9 @@ class Model{
 	protected  	$table ;	
 	protected  	$id= array() ; 
 	protected  	$PK= array(); 
+	protected		$Rech=array();
 	public    		$data ;
-	public 			$pRrech;
+	public 			$pRech;
 	
 	function __construct() {  /* constructeur de la class*/
 		
@@ -37,7 +38,7 @@ class Model{
 		return new $name($name);
 	}
 //-------------------------------------------------------------------------------------------------------------	
-public function read($fields=null,$pRech=null){
+	public function read($fields=null,$pRech=null){
 		$where="";
 		
 		if($fields==null){
@@ -52,29 +53,40 @@ public function read($fields=null,$pRech=null){
 				$sql.= $this->PK[0] .'='. $this->connection->quote($this->id[0]);
 			}	
 		}
+		else{ //création de la requête SQL qui permet la recherche sur les éléments prédéfinis.
+				$sql= 'SELECT * FROM '.$this->table.' WHERE';
+				$sql .=' upper(concat('.$this->Rech[0].', '.$this->Rech[1].', '.$this->Rech[2].'))';
+				$sql .=' LIKE upper('.$this->connection->quote('%'.trim($pRech).'%').')';	
+		}
+		try {
+		  	// On envois la requête
+			$select = $this->connection->query($sql);
+			
+		  	// On indique que nous utiliserons les résultats en tant qu'objet
+			$select->setFetchMode(PDO::FETCH_OBJ);
+			$this->data = new stdClass();
+			$this->data = $select->fetchAll();
+			
+
+		} catch ( PDOException $e ) {
+			echo 'Erreur lors de l\' exécution de la requête : '.$sql.'==========='.$e->getMessage(); ;
+		}
+	}
+//---------------------------------------------------------------------------------------------------------------------------------------
+// Fonction spécifique pour la'affichage du tableau "réservations".
+	public function InnerJoinDB($pRech=null){
+		
+		$sql= 'SELECT id_reserv,DateDebut,DateFin, nomclient,prenomclient, marque, modele, plaque ';
+		$sql.='FROM reservations ';
+		$sql.='INNER JOIN voitures,clients ';
+		if($pRech==null){		
+			$sql.='WHERE id_voiture=voitureID AND id_client=idclients';
+		}
 		else{
-			if ($where==""){
-				$sql= 'SELECT * from '.$this->table.' WHERE '.$this->PK[0].' = "'.trim($pRech).'"';
-			}
-			else{
-				$i=0;
-				while($i<count($this->Rech)){
-					if ($i==0) { $where="upper(concat("; }
-					else { $where.=" , '|' , "; }
-					$where.=$this->Rech[$i];			
-					$i++;
-				}
-				if ($where!=""){
-					$where.=" )) like upper(".$this->connection->quote("%".$pRech."%").") ";
-					$sql= 'SELECT '.$fields.' from '.$this->table.' where '.$where ;	
-				}else{
-					$sql= 'SELECT '.$fields.' from '.$this->table ;
-				}
-			}
+			$sql .='WHERE id_reserv='.$pRech.' AND id_voiture=voitureID AND id_client=idclients';
 		}
 		try {
 		  // On envois la requête
-		  //echo $sql;
 			$select = $this->connection->query($sql);
 			
 		  // On indique que nous utiliserons les résultats en tant qu'objet
@@ -87,5 +99,6 @@ public function read($fields=null,$pRech=null){
 			echo 'Erreur lors de l\' exécution de la requête : '.$sql.'==========='.$e->getMessage(); ;
 		}
 	}
+//-------------------------------------------------------------------------------------------------------------------------------------------------
 }
 ?>

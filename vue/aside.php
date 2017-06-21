@@ -7,6 +7,8 @@
 			<li><a href="../control/destroy.php" >Logout</a></li>
 			<li><a href="../control/utilisateurs_tab.php" >Utilisateurs</a></li>
 			<li><a href="../control/voitures_tab.php" >Voitures</a></li>
+            <li><a href="../control/clients_tab.php" >Clients</a></li>
+            <li><a href="../control/reservations_tab.php">Réservations</a></li>      
 		</ul>    
 		</article>
     

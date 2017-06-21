@@ -4,14 +4,14 @@ class utilisateurs extends Model{
 	var $id ;
 	var $PK=array("utilisateur");
 	var $data ; 
-	var $Rech=array("nom", "prenom"); // colonne sur lesquelles on va faire des recherches
+	var $Rech=array("utilisateur","nom","prenom"); // colonne sur lesquelles on va faire des recherches
 
 //------------------------------------------------------------------------------------------------------------------
 	public function update($pTB){
 		
 		$sql= " UPDATE ".$this->table;
 		$sql.=" SET ";
-		$sql.=" utilisateur=".$this->connection->quote($pTB["Login"]);
+		$sql.=" utilisateur =".$this->connection->quote($pTB["Login"]);
 		$sql.=", code		=".$this->connection->quote($pTB["Code"]); 
 		$sql.=", nom  		=".$this->connection->quote($pTB["Nom"]);
 		$sql.=", prenom 	=".$this->connection->quote($pTB["Prenom"]);

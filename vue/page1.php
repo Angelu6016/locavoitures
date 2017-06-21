@@ -3,7 +3,7 @@
 		<h2 class="testclass_h2">Nos réservations</h2>
 		<article>
 			<p class="Style1">Envie de voyager</p>
-			<p><img src="../vue/Images/banner01.PNG" width="1107" height="428"></p> 
+			<p><img  src="../vue/Images/banner01.PNG" id="imgbanner"></p> 
 		</article>		
 	</section>
 	<section>

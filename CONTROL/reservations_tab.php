@@ -7,9 +7,8 @@
 	if(isset($_POST['ZONE_RECH_USER'])){
 		$rech =$_POST['ZONE_RECH_USER'];
 	}
-
-	echo vue::rtv_Zone_Rech("../control/voitures_tab.php","ZONE_RECH_USER",$rech,"Rechercher une voiture");
+	echo vue::rtv_Zone_Rech("../control/reservations_tab.php","ZONE_RECH_USER",$rech,"Rechercher une réservation");
 	
-	require_once('../control/voitures_tab_ajax.php');
+	require_once('../control/reservations_tab_ajax.php');
 	require_once('../vue/bas.php');
 ?>
