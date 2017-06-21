@@ -83,7 +83,9 @@ class Model{
 			$sql.='WHERE id_voiture=voitureID AND id_client=idclients';
 		}
 		else{
-			$sql .='WHERE id_reserv='.$pRech.' AND id_voiture=voitureID AND id_client=idclients';
+			$sql .='WHERE id_voiture=voitureID AND id_client=idclients AND';
+			$sql .=' upper(concat('.$this->Rech[0].', '.$this->Rech[1].', '.$this->Rech[2].'))';
+			$sql .=' LIKE upper('.$this->connection->quote('%'.trim($pRech).'%').')';
 		}
 		try {
 		  // On envois la requête

@@ -80,7 +80,7 @@ class Vue{
 		$out .= '</form>';
 		//création du bouton d'annulation.		
 		$pAction = str_replace("fich","tab",$pAction);
-		$out .= '<form action="'.$pAction.'" method="post" id="btnAnnule">';
+		$out .= '<form action="'.$pAction.'" method="post">';
 		$out .= '<input type="submit" value="Annuler" />';
 		$out .= '</form>';		
 		return $out;
