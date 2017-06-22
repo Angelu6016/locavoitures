@@ -145,8 +145,14 @@ h2{
 }
 #alignForm{
 	position: absolute;
-	left:100px;
+	left:85px;
 }
+#designForm{
+	background-color:transparent;
+	border-color:transparent;
+	position: absolute;
+	left:230px;
+	}
 
 /*-----------------------------------------------------------------------------------------------------*/
 .TBHOUV {

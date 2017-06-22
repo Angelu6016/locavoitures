@@ -10,7 +10,7 @@ class Vue{
 		}
 		else{
 			$labelButton = "Nouvelle Réservation";
-		}
+		}//bouton pour un nouveau record
 		$formNouveau .= '<form action="'.$pAction.'" method="post" accept-charset="utf-8">';
 		$formNouveau .= '<input type="hidden" name="FormFicheAjout" value="1" >';
 		$formNouveau .= '<input type="submit" name="" value="'.$labelButton.'">';
@@ -34,8 +34,9 @@ class Vue{
 				
 				}
 				if (strstr($pAction, "reservations")){$pColID='id_reserv';}
+				if (strstr($pAction, "clients")){$pColID='CID';}
 				if ($pColID != '' && $pAction != '' && $subkey == $pColID){
-					//
+					
 					$colForm .= '<form action="'.$pAction.'" method="post" accept-charset="utf-8">';
 					$colForm .= '<input type="submit" value="Voir">';
 					$colForm .= '<input type="hidden" name="RECH_FICH" value="'.$subelement.'" >';
@@ -63,16 +64,16 @@ class Vue{
 		$out .= '<input type="hidden" name="FormModeAjax" value="0">';
 		$out .= '<input type="hidden" name="MODE" value="'.$pMode.'">';
 		
-		foreach($pParam ->data as $key => $element){
-			//affichage de la table
+		//affichage de la table
+		foreach($pParam ->data as $key => $element){		
 			foreach($element as $subkey => $subelement){
 				$varReadOnly="";
 				if ($subkey==$pPK) {
 					$varReadOnly="readonly";
-				}
-				
+				}				
 				$out .= '<p ><label for="'.$subkey.'" class="FormFiche">'.$subkey.'</label> :';
-				$out .='<input id="alignForm" type="text" name="'.$subkey.'"  value="'.$subelement.'"'.$varReadOnly.'/>';			
+				$out .='<input id="alignForm" type="text" name="'.$subkey.'"  value="'.$subelement.'"/>';	
+				$out .='<input id="designForm" type="text" name=""  value="'.$varReadOnly.'"/>';		
 				$out .='</p>';
 			}
 		}
@@ -98,7 +99,7 @@ class Vue{
 		if (strstr($pAction, "utilisateurs")) {$ValRetour .='La recherche se fait sur Login, nom et prénom.';}
 		if (strstr($pAction, "voitures")){$ValRetour .='La recherche se fait sur Marque, Modèle et Plaque.';}
 		if (strstr($pAction, "reservations") ){$ValRetour .='La recherche se fait sur Date de début, nom du client et modèle de la voiture.';}
-			
+		if (strstr($pAction, "clients") ){$ValRetour .='La recherche se fait sur ID Client, nom du client et N° du permis.';}	
 		$ValRetour .= ' ';
 		$ValRetour .= '</section>';
 		return $ValRetour;

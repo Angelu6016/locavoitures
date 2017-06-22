@@ -74,18 +74,24 @@ class Model{
 	}
 //---------------------------------------------------------------------------------------------------------------------------------------
 // Fonction spécifique pour la'affichage du tableau "réservations".
-	public function InnerJoinDB($pRech=null){
+	public function InnerJoinDB($pRech=null,$pFiche=null){
 		
 		$sql= 'SELECT id_reserv,DateDebut,DateFin, nomclient,prenomclient, marque, modele, plaque ';
 		$sql.='FROM reservations ';
 		$sql.='INNER JOIN voitures,clients ';
+		
 		if($pRech==null){		
 			$sql.='WHERE id_voiture=voitureID AND id_client=idclients';
 		}
 		else{
-			$sql .='WHERE id_voiture=voitureID AND id_client=idclients AND';
-			$sql .=' upper(concat('.$this->Rech[0].', '.$this->Rech[1].', '.$this->Rech[2].'))';
-			$sql .=' LIKE upper('.$this->connection->quote('%'.trim($pRech).'%').')';
+			if($pFiche!=null){
+				$sql.='WHERE id_reserv="'.$pRech.'" AND id_voiture=voitureID AND id_client=idclients';
+			}
+			else{
+			$sql .='WHERE upper(concat('.$this->Rech[0].', '.$this->Rech[1].', '.$this->Rech[2].')) ';		
+			$sql .=' LIKE upper('.$this->connection->quote('%'.trim($pRech).'%').')';	
+			$sql .=' AND id_voiture=voitureID AND id_client=idclients';
+			}
 		}
 		try {
 		  // On envois la requête
