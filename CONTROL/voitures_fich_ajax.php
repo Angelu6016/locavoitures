@@ -8,7 +8,7 @@
 			if($voitures->update($_POST)){
 				echo '<script>alert("Modification effectuée")</script>';
 				require_once('../control/voitures_tab.php');
-			}
+			}			
 			$_POST['RECH_FICH']=$_POST['ID'];
 		}
 		else{

@@ -26,7 +26,7 @@
 					</p>
 					<p>
 						<input type="checkbox" name="NEWSLETTER" value="1">
-						Je veux recevoir la newsletter de l'école
+						Je veux recevoir la newsletter.
 					</p>
 
 					<P>
@@ -39,8 +39,8 @@
 		<article>
 			<h3>Par courrier</h3>
 			<p>
-				Collège Technique "Aumôniers du Travail" </br>
-				Enseignement de Promotion Sociale</br>
+				LOCAVOITURES</br>
+				Département Charleroi</br>
 				Grand rue 185 </br>
 				6000 Charleroi </br>
 			</p>
@@ -83,50 +83,7 @@
 			
 		</p>
 		<p>
-			Inscriptions dès le 24 août </br>
 			du lundi au vendredi de 9h30 à 12h30 et de 13h30 à 20h30
 		</p>
-	</article>		
-</section>
-<section>
-	<article>
-		<p>
-				<?php
-				$i=1;
-				while ($i <= 10) {
-					echo "Ceci est la ligne N°".$i."</br>";
-					$i++;
-				}
-
-				echo "<ul>";
-				$i=1;
-				while ($i <= 10) {
-					echo "<li>Ceci est la ligne N°".$i."</li>";
-					$i++;
-				}
-				echo "</ul>";
-
-				echo "<table >";
-					echo "<caption>Table dynamique</caption>";
-
-						echo "<tr>";
-							echo "<th>#</th>";
-							echo "<th>Libellé</th>";
-						echo "</tr>";
-				$i=1;
-				while ($i <= 10) {
-					if($i %2 == 0){
-						$coul ="rouge";
-					}else{
-						$coul ="bleu";
-					}
-					echo "<tr class=\"".$coul."\"><td>".$i."</td><td>Ceci est la ligne N°".$i."</td></tr>";
-					$i++;
-				}
-						
-				echo "</table>";
-				?>
-		</p>			
-
 	</article>		
 </section>

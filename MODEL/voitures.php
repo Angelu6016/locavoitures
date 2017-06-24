@@ -43,9 +43,17 @@ class voitures extends Model{
 		}else{
 			$this->id[0]="";
 		}
-
 		return $valRetour;
 	}
+//-----------------------------------------------------------------------------------------------------------------
+	public function delete($pTable){
+		$sql="";
+		
+		$sql = " UPDATE ".$this->table." SET actif = 0";
+		$sql.=" WHERE ".$this->PK[0]." =  ".$this->connection->quote($pTable["voitureID"]);
+		return $this->connection->query($sql);
+	}
+//----------------------------------------------------------------------------------------------------------------
 }
 
 ?>

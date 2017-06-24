@@ -4,21 +4,23 @@ class Vue{
 		$out  = "";
 		$formNouveau="";
 		$formRetour="";
-			
+		$formSupprim="";
+		//change l'étiquette du bouton d'ajout d'un nouvel enregistrement	
 		if (strstr($pAction, "utilisateurs") ||strstr($pAction, "voitures") ||strstr($pAction, "clients") ){
 			$labelButton = "Nouvelle Fiche";
 		}
 		else{
 			$labelButton = "Nouvelle Réservation";
-		}//bouton pour un nouveau record
+		}
+		//Création du bouton pour un nouveau record
 		$formNouveau .= '<form action="'.$pAction.'" method="post" accept-charset="utf-8">';
 		$formNouveau .= '<input type="hidden" name="FormFicheAjout" value="1" >';
 		$formNouveau .= '<input type="submit" name="" value="'.$labelButton.'">';
 		$formNouveau .= '</form>';
-		// bouton de retour
+		
+		//Création du bouton de retour
 		$pAction2 = str_replace("fich","tab",$pAction);
 		$formRetour .= '<form action="'.$pAction2.'" method="post" accept-charset="utf-8">';
-		$formRetour .= '<input type="hidden" name="FormFicheAjout" value="1" >';
 		$formRetour .= '<input type="submit" name="" value="Retour">';
 		$formRetour .= '</form>';
 		
@@ -28,20 +30,20 @@ class Vue{
 		foreach($pTable->data as $key => $element){
 			$out .= '<tr class="POPUPFORM">';
 			$colForm = '';
+			$colDel="";
 			foreach($element as $subkey => $subelement){
 				if($titre_trt==false){
-					$titre .= '<th>'.$subkey.'</th>' ;	
-				
+					$titre .= '<th>'.$subkey.'</th>' ;					
 				}
 				if (strstr($pAction, "reservations")){$pColID='id_reserv';}
 				if (strstr($pAction, "clients")){$pColID='CID';}
-				if ($pColID != '' && $pAction != '' && $subkey == $pColID){
-					
+				if ($pColID != '' && $pAction != '' && $subkey == $pColID){	
+							
 					$colForm .= '<form action="'.$pAction.'" method="post" accept-charset="utf-8">';
 					$colForm .= '<input type="submit" value="Voir">';
 					$colForm .= '<input type="hidden" name="RECH_FICH" value="'.$subelement.'" >';
 					$colForm .= '</form>';
-					$colForm = '<td name="td_form">'.$colForm.'</td>';
+					$colForm = '<td>'.$colForm.'</td>';
 				}
 				$out .= '<td>'.$subelement.'</td>' ;
 			}
@@ -79,6 +81,7 @@ class Vue{
 		}
 		$out .= '<input type="submit" name="VALIDER" value="Valider">';
 		$out .= '</form>';
+		
 		//création du bouton d'annulation.		
 		$pAction = str_replace("fich","tab",$pAction);
 		$out .= '<form action="'.$pAction.'" method="post">';

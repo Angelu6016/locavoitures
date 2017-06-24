@@ -47,5 +47,14 @@ class clients extends Model{
 		}
 		return $valRetour;
 	}
+//-----------------------------------------------------------------------------------------------------------------
+	public function delete($pTable){
+		$sql="";
+		
+		$sql = " UPDATE ".$this->table." SET actif = 0";
+		$sql.=" WHERE ".$this->PK[0]." =  ".$this->connection->quote($pTable["idclients"]);
+		return $this->connection->query($sql);
+	}
+//----------------------------------------------------------------------------------------------------------------
 }
 ?>
